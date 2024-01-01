@@ -16,14 +16,14 @@ then
 fi
 
 #Install apps from arch repo and AUR
-yay -S --noconfirm appimagelauncher
+yay -S --noconfirm appimagelauncher-git
 yay -S --noconfirm audacity
 yay -S --noconfirm avahi
 yay -S --noconfirm bottles
 yay -S --noconfirm brave-bin
 yay -S --noconfirm discord
 yay -S --noconfirm flatpak
-yay -S --noconfirm freecad
+#yay -S --noconfirm freecad
 yay -S --noconfirm gimp
 yay -S --noconfirm gnome-boxes
 yay -S --noconfirm go
@@ -51,6 +51,11 @@ yay -S --noconfirm shutter
 yay -S --noconfirm vscodium
 yay -S --noconfirm xonotic
 yay -S --noconfirm yt-dlp
+
+#Appimages
+wget https://github.com/FreeCAD/FreeCAD/releases/download/0.21.1/FreeCAD_0.21.1-Linux-x86_64.AppImage
+chmod u+x FreeCAD_0.21.1-Linux-x86_64.AppImage
+./FreeCAD_0.21.1-Linux-x86_64.AppImage
 
 #Flatpaks
 flatpak install flathub io.gitlab.librewolf-community
@@ -87,8 +92,6 @@ git clone https://github.com/triplus/IconThemes.git /home/thothloki/.local/share
 git clone https://github.com/execuc/LCInterlocking/blob/master/README.md.git /home/thothloki/.local/share/FreeCAD/Mod/
 git clone https://github.com/obelisk79/OpenDark.git /home/thothloki/.local/share/FreeCAD/Mod/
 git clone https://github.com/shaise/FreeCAD_SheetMetal.git /home/thothloki/.local/share/FreeCAD/Mod/
-
-
 
 #Set up KDE Plasma
 
