@@ -80,7 +80,7 @@ yay -S --noconfirm wike
 sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
 pip3 install appjar
 pip3 install konsave
-echo 'export PATH=""$PATH:/home/thothloki/.local/bin"' >> ~/.bashrc
+echo 'export PATH="$PATH:/home/thothloki/.local/bin"' >> ~/.bashrc
 source ~/.bashrc
 
 #Copy settings files from github and move them to where they need to go
