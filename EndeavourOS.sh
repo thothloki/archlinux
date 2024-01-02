@@ -76,6 +76,13 @@ yay -S --noconfirm dialect
 yay -S --noconfirm junction
 yay -S --noconfirm wike
 
+#Edit Python and add modules
+sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+pip3 install appjar
+pip3 install konsave
+echo 'export PATH=""$PATH:/home/thothloki/.local/bin"' >> ~/.bashrc
+source ~/.bashrc
+
 #Copy settings files from github and move them to where they need to go
 #Download all files
 git clone https://github.com/thothloki/archlinux.git
@@ -94,6 +101,7 @@ git clone https://github.com/obelisk79/OpenDark.git /home/thothloki/.local/share
 git clone https://github.com/shaise/FreeCAD_SheetMetal.git /home/thothloki/.local/share/FreeCAD/Mod/
 
 #Set up KDE Plasma
+konsave -i /KDE_Settings/thothloki.knsv
 
 #Reboot system 
 sudo reboot -h now
