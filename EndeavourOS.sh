@@ -32,6 +32,7 @@ yay -S --noconfirm handbrake
 yay -S --noconfirm htop
 yay -S --noconfirm inkscape
 yay -S --noconfirm ivpn-ui
+yay -S --noconfirm kde-gtk-config
 yay -S --noconfirm kicad
 yay -S --noconfirm librecad
 yay -S --noconfirm libreoffice-fresh
@@ -102,6 +103,7 @@ git clone https://github.com/obelisk79/OpenDark.git /home/thothloki/.local/share
 git clone https://github.com/shaise/FreeCAD_SheetMetal.git /home/thothloki/.local/share/FreeCAD/Mod/
 
 #Set up KDE Plasma
+echo 'export GTK_THEME=Breeze' >> /etc/environment
 
 #Reboot system 
 sudo reboot -h now
