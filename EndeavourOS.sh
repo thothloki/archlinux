@@ -3,7 +3,7 @@
 #check if yay is installed
 if ! command -v yay &> /dev/null
 then
-    echo "yay could not be found. Installing"
+    echo "yay not installed. Installing"
     #Check if git is installed
     if ! command -c git &> /dev/null
     then
@@ -25,6 +25,7 @@ yay -S --noconfirm btrfs-assistant
 yay -S --noconfirm discord
 yay -S --noconfirm flatpak
 #yay -S --noconfirm freecad
+#yay -S --noconfirm freecad-weekly-appimage
 yay -S --noconfirm gimp
 yay -S --noconfirm gnome-boxes
 yay -S --noconfirm go
@@ -34,9 +35,12 @@ yay -S --noconfirm inkscape
 yay -S --noconfirm ivpn-ui
 yay -S --noconfirm kde-gtk-config
 yay -S --noconfirm kicad
+yay -S --noconfirm --asdeps kicad-library
+yay -S --noconfirm --asdeps kicad-library-3d
 yay -S --noconfirm librecad
 yay -S --noconfirm libreoffice-fresh
 #yay -S --noconfirm librewolf-bin
+yay -S --noconfirm lightburn
 yay -S --noconfirm megasync
 yay -S --noconfirm micro
 yay -S --noconfirm neofetch
@@ -52,14 +56,16 @@ yay -S --noconfirm rustdesk
 yay -S --noconfirm schildichat-desktop
 yay -S --noconfirm snapper
 #yay -S --noconfirm shutter
+yay -S --nofonfirm thonny
 yay -S --noconfirm vscodium
+ysy -S --noconfirm watchmate
 yay -S --noconfirm xonotic
 yay -S --noconfirm yt-dlp
 
 #Appimages
-wget https://github.com/FreeCAD/FreeCAD/releases/download/0.21.1/FreeCAD_0.21.1-Linux-x86_64.AppImage
-chmod u+x FreeCAD_0.21.1-Linux-x86_64.AppImage
-./FreeCAD_0.21.1-Linux-x86_64.AppImage
+wget https://github.com/FreeCAD/FreeCAD/releases/download/0.21.2/FreeCAD-0.21.2-Linux-x86_64.AppImage
+chmod u+x FreeCAD_0.21.2-Linux-x86_64.AppImage
+./FreeCAD_0.21.2-Linux-x86_64.AppImage
 
 #Flatpaks
 #flatpak install -y flathub io.gitlab.librewolf-community
@@ -80,10 +86,27 @@ yay -S --noconfirm wike
 
 #Edit Python and add modules
 sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+yay -S --noconfirm python3-pip
+pip3 install lxml
+pip3 install pyusb
 pip3 install appjar
+pip3 install pillow
+pip3 install pyclipper
 #pip3 install konsave
 #echo 'export PATH="$PATH:/home/thothloki/.local/bin"' >> ~/.bashrc
 #source ~/.bashrc
+
+#Inkscape - Install inkscape-silhouette extension
+git clone https://github.com/fablabnbg/inkscape-silhouette.git
+cd inkscape-silhouette
+make install-local
+cd
+sudo rm -rf inkscape-silhouette
+
+#K40 Whisperer partial setup
+wget https://www.scorchworks.com/K40whisperer/K40_Whisperer-0.68_src.zip
+sudo groupadd lasercutter
+sudo usermod -a -G lasercutter thothloki
 
 #Copy settings files from github and move them to where they need to go
 #Download all files
@@ -104,6 +127,10 @@ git clone https://github.com/shaise/FreeCAD_SheetMetal.git /home/thothloki/.loca
 
 #Set up KDE Plasma
 echo 'export GTK_THEME=Breeze' >> /etc/environment
+
+#Enable Bluetooth
+sudo systemctl start bluetooth
+sudo systemctl enable bluetooth
 
 #Reboot system 
 sudo reboot -h now
