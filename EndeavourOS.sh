@@ -25,7 +25,7 @@ yay -S --noconfirm btrfs-assistant
 yay -S --noconfirm discord
 yay -S --noconfirm flatpak
 #yay -S --noconfirm freecad
-#yay -S --noconfirm freecad-weekly-appimage
+yay -S --noconfirm freecad-weekly-appimage
 yay -S --noconfirm gimp
 yay -S --noconfirm gnome-boxes
 yay -S --noconfirm go
@@ -39,7 +39,7 @@ yay -S --noconfirm --asdeps kicad-library
 yay -S --noconfirm --asdeps kicad-library-3d
 yay -S --noconfirm librecad
 yay -S --noconfirm libreoffice-fresh
-#yay -S --noconfirm librewolf-bin
+yay -S --noconfirm librewolf-bin
 yay -S --noconfirm lightburn
 yay -S --noconfirm megasync
 yay -S --noconfirm micro
@@ -63,9 +63,12 @@ yay -S --noconfirm xonotic
 yay -S --noconfirm yt-dlp
 
 #Appimages
-wget https://github.com/FreeCAD/FreeCAD/releases/download/0.21.2/FreeCAD-0.21.2-Linux-x86_64.AppImage
-chmod u+x FreeCAD_0.21.2-Linux-x86_64.AppImage
-./FreeCAD_0.21.2-Linux-x86_64.AppImage
+#wget https://github.com/FreeCAD/FreeCAD/releases/download/0.21.2/FreeCAD-0.21.2-Linux-x86_64.AppImage
+#chmod u+x FreeCAD_0.21.2-Linux-x86_64.AppImage
+#./FreeCAD_0.21.2-Linux-x86_64.AppImage
+wget https://downloads.arduino.cc/arduino-ide/arduino-ide_2.2.1_Linux_64bit.AppImage
+chmod u+x arduino-ide_2.2.1_Linux_64bit.AppImage
+./arduino-ide_2.2.1_Linux_64bit.AppImage
 
 #Flatpaks
 #flatpak install -y flathub io.gitlab.librewolf-community
@@ -77,7 +80,8 @@ yay -S --noconfirm kdevelop
 yay -S --noconfirm kiriki
 yay -S --noconfirm kmymoney
 #yay -S --noconfirm krita
-#yay -S --noconfirm ktorrent
+yay -S --noconfirm ktorrent
+yay -S --noconfirm smb4k 
 
 #GNOME Specific Apps
 yay -S --noconfirm dialect
