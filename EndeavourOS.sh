@@ -112,6 +112,10 @@ wget https://www.scorchworks.com/K40whisperer/K40_Whisperer-0.68_src.zip
 sudo groupadd lasercutter
 sudo usermod -a -G lasercutter thothloki
 
+#Install MU Editor
+wget https://github.com/mu-editor/mu/releases/download/v1.2.0/MuEditor-Linux-1.2.0-x86_64.tar -P /Downloads
+
+
 #Copy settings files from github and move them to where they need to go
 #Download all files
 git clone https://github.com/thothloki/archlinux.git
